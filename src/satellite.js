@@ -140,16 +140,24 @@ function getTable(config) {
 			} else {
 				for (let i = 0; i < 4; i++) {
 					database.sort(compare[i]);
-					database = database.map((ele, index) => {
-						ele[property[8]] += 100 * (1 - index / database.length) * weight[i];
-						return ele;
-					});
-				}
-				database = database.map((ele, index) => {
-					if (isNaN(ele[property[6]][1])) {
-						ele[property[8]] = 0;
-						return ele;
-					} //上中天没有星等直接归零
+					// Fix for the 'index' is defined but never used error
+                                 database = database.map((ele) => {
+	                         if (isNaN(ele[property[6]][1])) {
+		                ele[property[8]] = 0;
+		                return ele;
+	                                                         } //上中天没有星等直接归零
+	                       if (ele[property[6]][0] >= 17 && ele[property[6]][0] <= 19) {
+		               ele[property[8]] += 850;
+	                      } else if (ele[property[6]][0] >= 20 && ele[property[6]][0] <= 23) {
+		                ele[property[8]] += 950;
+	                      } else if (ele[property[6]][0] >= 0 && ele[property[6]][0] <= 3) {
+		               ele[property[8]] += 400;
+	                      } else if (ele[property[6]][0] >= 4 && ele[property[6]][0] <= 6) {
+		              ele[property[8]] += 300;
+	                                                  }
+	ele[property[8]] = Math.floor(ele[property[8]] / 40);
+	return ele;
+});
 					if (ele[property[6]][0] >= 17 && ele[property[6]][0] <= 19) {
 						ele[property[8]] += 850;
 					} else if (ele[property[6]][0] >= 20 && ele[property[6]][0] <= 23) {
