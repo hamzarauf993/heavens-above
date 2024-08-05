@@ -28,6 +28,7 @@ function getTable(config) {
 	let counter = config.counter || 0;
 	const opt = config.opt || 0;
 	const basedir = `${config.root}satellite${config.target}/`;
+	let options;  // Define options variable
 	if (counter === 0) {
 		options = utils.get_options(`PassSummary.aspx?satid=${config.target}&`);
 		if (!fs.existsSync(basedir)) {
@@ -73,6 +74,7 @@ function getTable(config) {
                     let shift = 0;
 					let flag = false;
 					const data = [];
+					let current;  // Define current variable
                     for (let i = 0; i < tbody.find("tr").length; i++) {
 						if (tbody.find("tr").eq(i).find("td").eq(0).text() === "离开地影") { //Exits shadow
 							temp[property[3]][events[5]] = {};
@@ -155,7 +157,7 @@ function getTable(config) {
 					} else if (ele[property[6]][0] >= 0 && ele[property[6]][0] <= 3) {
 						ele[property[8]] += 400;
 					} else if (ele[property[6]][0] >= 4 && ele[property[6]][0] <= 6) {
-						ele[property[8]] += 300;
+						 ele[property[8]] += 300;
 					}
 					ele[property[8]] = Math.floor(ele[property[8]] / 40);
 					return ele;
