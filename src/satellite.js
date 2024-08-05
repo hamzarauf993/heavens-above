@@ -127,7 +127,7 @@ function getTable(config) {
 				else next += `&${$(o).attr("name")}=${$(o).attr("value")}`;
 			});
 			next += "&ctl00$cph1$visible=radioVisible";
-			next = next.replace(/\+/g, "%2B").replace(/\//g, "%2F") //.replace(/\$/g, "%24");
+			next = next.replace(/\+/g, "%2B").replace(/\//g, "%2F"); //.replace(/\$/g, "%24");
 			if (counter++ < config.pages) {
 				getTable({
 					target: config.target,
@@ -140,36 +140,24 @@ function getTable(config) {
 			} else {
 				for (let i = 0; i < 4; i++) {
 					database.sort(compare[i]);
-					// Fix for the 'index' is defined but never used error
-                                 database = database.map((ele) => {
-	                         if (isNaN(ele[property[6]][1])) {
-		                ele[property[8]] = 0;
-		                return ele;
-	                                                         } //上中天没有星等直接归零
-	                       if (ele[property[6]][0] >= 17 && ele[property[6]][0] <= 19) {
-		               ele[property[8]] += 850;
-	                      } else if (ele[property[6]][0] >= 20 && ele[property[6]][0] <= 23) {
-		                ele[property[8]] += 950;
-	                      } else if (ele[property[6]][0] >= 0 && ele[property[6]][0] <= 3) {
-		               ele[property[8]] += 400;
-	                      } else if (ele[property[6]][0] >= 4 && ele[property[6]][0] <= 6) {
-		              ele[property[8]] += 300;
-	                                                  }
-	ele[property[8]] = Math.floor(ele[property[8]] / 40);
-	return ele;
-});
-					if (ele[property[6]][0] >= 17 && ele[property[6]][0] <= 19) {
-						ele[property[8]] += 850;
-					} else if (ele[property[6]][0] >= 20 && ele[property[6]][0] <= 23) {
-						ele[property[8]] += 950;
-					} else if (ele[property[6]][0] >= 0 && ele[property[6]][0] <= 3) {
-						ele[property[8]] += 400;
-					} else if (ele[property[6]][0] >= 4 && ele[property[6]][0] <= 6) {
-						 ele[property[8]] += 300;
-					}
-					ele[property[8]] = Math.floor(ele[property[8]] / 40);
-					return ele;
-				});
+					database = database.map((ele) => {
+						if (isNaN(ele[property[6]][1])) {
+							ele[property[8]] = 0;
+							return ele;
+						} //上中天没有星等直接归零
+						if (ele[property[6]][0] >= 17 && ele[property[6]][0] <= 19) {
+							ele[property[8]] += 850;
+						} else if (ele[property[6]][0] >= 20 && ele[property[6]][0] <= 23) {
+							ele[property[8]] += 950;
+						} else if (ele[property[6]][0] >= 0 && ele[property[6]][0] <= 3) {
+							ele[property[8]] += 400;
+						} else if (ele[property[6]][0] >= 4 && ele[property[6]][0] <= 6) {
+							ele[property[8]] += 300;
+						}
+						ele[property[8]] = Math.floor(ele[property[8]] / 40);
+						return ele;
+					});
+				}
 				database.sort((a, b) => {
 					return a[property[8]] <= b[property[8]] ? 1 : -1; //分数
 				});
