@@ -24,6 +24,7 @@ jobs:
 
     - name: Run lint
       run: npm run lint
+      
     - name: eslint
       run: eslint --init
 
