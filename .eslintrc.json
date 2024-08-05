@@ -1,6 +1,7 @@
 {
   "env": {
     "browser": true,
+    "node": true,  // Add this line to support Node.js globals
     "es2021": true
   },
   "extends": "eslint:recommended",
