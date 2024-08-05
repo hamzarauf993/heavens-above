@@ -8,7 +8,9 @@
     "start": "node run.js",
     "lint": "eslint .",
     "build": "echo 'No build script defined'",
-     "maintenance": "node scripts/maintenance.js"
+    "maintenance": "node scripts/maintenance.js",
+    "build": "webpack",
+    "start": "webpack serve --open"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
