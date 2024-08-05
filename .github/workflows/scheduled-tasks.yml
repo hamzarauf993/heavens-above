@@ -1,0 +1,40 @@
+name: Scheduled Tasks
+
+on:
+  schedule:
+    # Runs at 2:00 AM every day
+    - cron: '0 2 * * *'
+    # Runs at 2:00 PM every Monday
+    # - cron: '0 14 * * 1'
+
+jobs:
+  run-scheduled-tasks:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run maintenance script
+      run: npm run maintenance
+
+    - name: Notify about completion
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const message = 'Scheduled task completed successfully!';
+          console.log(message);
+          await github.rest.issues.createComment({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            issue_number: YOUR_ISSUE_NUMBER, // Optional: Replace with an issue number if you want to comment on an issue
+            body: message
+          });
