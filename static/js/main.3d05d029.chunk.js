@@ -1,0 +1,2 @@
+(this["webpackJsonpheavens-above"]=this["webpackJsonpheavens-above"]||[]).push([[0],{9:function(e,n,t){"use strict";t.r(n);var c=t(1),r=t.n(c),s=t(3),o=t.n(s),a=t(0);var i=function(){return Object(a.jsx)("div",{children:Object(a.jsx)("h1",{children:"Hello, World!"})})};o.a.render(Object(a.jsx)(r.a.StrictMode,{children:Object(a.jsx)(i,{})}),document.getElementById("root"))}},[[9,1,2]]]);
+//# sourceMappingURL=main.3d05d029.chunk.js.map

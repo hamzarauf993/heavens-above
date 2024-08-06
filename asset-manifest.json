@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/PKUPI/heavens-abovestatic/js/main.3d05d029.chunk.js",
+    "main.js.map": "/PKUPI/heavens-abovestatic/js/main.3d05d029.chunk.js.map",
+    "runtime-main.js": "/PKUPI/heavens-abovestatic/js/runtime-main.abbea916.js",
+    "runtime-main.js.map": "/PKUPI/heavens-abovestatic/js/runtime-main.abbea916.js.map",
+    "static/js/2.d7901bd3.chunk.js": "/PKUPI/heavens-abovestatic/js/2.d7901bd3.chunk.js",
+    "static/js/2.d7901bd3.chunk.js.map": "/PKUPI/heavens-abovestatic/js/2.d7901bd3.chunk.js.map",
+    "index.html": "/PKUPI/heavens-aboveindex.html",
+    "static/js/2.d7901bd3.chunk.js.LICENSE.txt": "/PKUPI/heavens-abovestatic/js/2.d7901bd3.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.abbea916.js",
+    "static/js/2.d7901bd3.chunk.js",
+    "static/js/main.3d05d029.chunk.js"
+  ]
+}
