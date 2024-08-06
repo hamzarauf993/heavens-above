@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "build": "echo 'No build script defined'",
     "maintenance": "node scripts/maintenance.js"
+    "build": "react-scripts build"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
