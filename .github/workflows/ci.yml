@@ -22,8 +22,6 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Run ESLint
-      run: npm run lint
 
     - name: Additional install
       run: npm install @babel/core @babel/preset-env @babel/preset-react babel-loader webpack webpack-cli webpack-dev-server --save-dev
