@@ -27,6 +27,9 @@ jobs:
 
     - name: Additional install
       run: npm install @babel/core @babel/preset-env @babel/preset-react babel-loader webpack webpack-cli webpack-dev-server --save-dev
+      
+    - name: installing for .eslintrc.json
+      run: npm install babel-eslint eslint-plugin-react --save-dev
 
 
     - name: Run tests
