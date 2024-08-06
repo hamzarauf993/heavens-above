@@ -16,7 +16,7 @@
     "request": "^2.88.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
+    "react-scripts": "4.0.3"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
