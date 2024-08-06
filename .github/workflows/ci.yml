@@ -29,5 +29,8 @@ jobs:
     - name: installing for .eslintrc.json
       run: npm install babel-eslint eslint-plugin-react --save-dev
 
+    - name: Run lint
+      run: npm run lint
+
     - name: Run tests
       run: npm test
